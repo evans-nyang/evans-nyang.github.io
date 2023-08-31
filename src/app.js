@@ -3,16 +3,15 @@ const sectBtns = document.querySelectorAll('.controls');
 const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
 
-
-function PageTransitions(params) {
+const PageTransitions = () => {
     //Button click active class
-    for (let i = 0; i < sectBtn.length; i++) {
-        sectBtn[i].addEventListener('click', function () {
-            let currentBtn = document.querySelectorAll('.active-btn');
-            currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
+    sectBtn.forEach((btn, i) => {
+        btn.addEventListener('click', function () {
+            const currentBtn = document.querySelector('.active-btn');
+            currentBtn.className = currentBtn.className.replace('active-btn', '');
             this.className += ' active-btn';
         })
-    }
+    })
 
     //Sections Active
     allSections.addEventListener('click', (e) => {
@@ -37,9 +36,18 @@ function PageTransitions(params) {
     //Toggle theme
     const themeBtn = document.querySelector('.theme-btn');
     themeBtn.addEventListener('click', () => {
-        let element = document.body;
-        element.classList.toggle('light-mode')
+        document.body.classList.toggle('light-mode')
     })
+
+    // Automatic theme change based on time of day
+    const currentHour = new Date().getHours();
+    if (currentHour >= 6 && currentHour < 18) {
+        // Day time (6AM - 6PM), use light mode
+        document.body.classList.add('light-mode');
+    } else {
+        // Night time (6PM - 6AM), use dark mode
+        document.body.classList.remove('light-mode');
+    }
 }
 
 PageTransitions();
