@@ -41,11 +41,11 @@ const PageTransitions = () => {
 
     // Automatic theme change based on time of day
     const currentHour = new Date().getHours();
-    if (currentHour >= 6 && currentHour < 18) {
-        // Day time (6AM - 6PM), use light mode
+    if (currentHour >= 7 && currentHour < 19) {
+        // Day time (7AM - 7PM), use light mode
         document.body.classList.add('light-mode');
     } else {
-        // Night time (6PM - 6AM), use dark mode
+        // Night time (7PM - 7AM), use dark mode
         document.body.classList.remove('light-mode');
     }
 }
