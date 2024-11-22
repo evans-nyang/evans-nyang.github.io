@@ -19,4 +19,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # Ensure it deploys to gh-pages branch
           publish_dir: ./  # Publish the root folder containing index.html
