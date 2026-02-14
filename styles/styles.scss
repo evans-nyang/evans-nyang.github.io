@@ -405,7 +405,8 @@ section {
 
 /*Timeline*/
 .timeline {
-    display: grid;
+    // display: grid;
+    display: block;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     padding-bottom: 3rem;

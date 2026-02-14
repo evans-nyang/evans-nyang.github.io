@@ -191,8 +191,7 @@ section {
   left: 0;
   top: 0;
   z-index: -1;
-  -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
-          clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+  clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
 }
 .header-content .left-header .image {
   border-radius: var(--br-sm-2);
@@ -366,7 +365,7 @@ section {
 
 /*Timeline*/
 .timeline {
-  display: grid;
+  display: block;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
   padding-bottom: 3rem;
